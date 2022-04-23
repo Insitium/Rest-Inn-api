@@ -8,12 +8,12 @@ public class Property {
 
 	@Id
 	private String id;
-	private String image;
+	private String img;
 	private String title;
 	private String price;
 	private String type;
-	private String houseRules;
-	private String ameneties;
+	private String rules;
+	private String amenities;
 	private String location;
 	private Boolean bestSeller;
 	public String getId() {
@@ -28,18 +28,33 @@ public class Property {
 	}
 	
 
-	public Property(String id, String image, String title, String price, String type, String houseRules,
-			String ameneties, String location,Boolean bestSeller) {
+	public Property(String id, String img, String title, String price, String type, String rules,
+			String amenities, String location,Boolean bestSeller) {
 		super();
 		this.id = id;
-		this.image = image;
+		this.img = img;
 		this.title = title;
 		this.price = price;
 		this.type = type;
-		this.houseRules = houseRules;
-		this.ameneties = ameneties;
+		this.rules = rules;
+		this.amenities = amenities;
 		this.location = location;
 		this.bestSeller = bestSeller;
+	}
+
+
+
+
+
+
+	public String getRules() {
+		return rules;
+	}
+
+
+
+	public void setRules(String rules) {
+		this.rules = rules;
 	}
 
 
@@ -47,11 +62,11 @@ public class Property {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getImage() {
-		return image;
+	public String getImg() {
+		return img;
 	}
-	public void setImage(String image) {
-		this.image = image;
+	public void setImg(String img) {
+		this.img = img;
 	}
 	public String getTitle() {
 		return title;
@@ -71,17 +86,13 @@ public class Property {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public String getHouseRules() {
-		return houseRules;
+	
+	
+	public String getAmenities() {
+		return amenities;
 	}
-	public void setHouseRules(String houseRules) {
-		this.houseRules = houseRules;
-	}
-	public String getAmeneties() {
-		return ameneties;
-	}
-	public void setAmeneties(String ameneties) {
-		this.ameneties = ameneties;
+	public void setAmenities(String amenities) {
+		this.amenities = amenities;
 	}
 	public String getLocation() {
 		return location;

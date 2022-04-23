@@ -20,11 +20,11 @@ public class AuthController {
 	@PostMapping("/auth")
 	public ResponseEntity login(@RequestBody Users users) {
 		try {
-			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(users.getEmail(), users.getPassword()));
+			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(users.getUserName(), users.getPassword()));
 			return new ResponseEntity("Login Successfull", HttpStatus.OK);
 			
 		}catch(BadCredentialsException badCredentialsException) {
-			return new ResponseEntity("Please try again: Email or password is incorrect",HttpStatus.NOT_FOUND);
+			return new ResponseEntity("Please try again: Username or password is incorrect",HttpStatus.NOT_FOUND);
 		}
 	}
 }

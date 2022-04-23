@@ -12,9 +12,11 @@ import com.example.restinProject.entity.Property;
 
 @Service
 public class PropertyService {
-	
 	@Autowired
 	PropertyDao propertyDao;
+
+	ArrayList<String> uniqueChecker = new ArrayList<>();
+
 	
 	public List<Property> getAllProperties(){
 		return propertyDao.findAll();
@@ -27,6 +29,21 @@ public class PropertyService {
 		}else {
 			return null;
 		}
+	}
+	
+	public ArrayList<Property> getUniqueProperty(){
+		ArrayList<Property> uniqueProperties = new ArrayList<>();
+
+		for(Property p:propertyDao.findAll()) {
+			if(uniqueChecker.contains(p.getType())==false) {
+				uniqueProperties.add(p);
+				uniqueChecker.add(p.getType());
+			}
+		}
+		if(uniqueProperties!=null) {
+			return uniqueProperties;
+		}
+		return null;
 	}
 public ArrayList<Property> getBestsellers() {
 		
